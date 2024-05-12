@@ -1,0 +1,1 @@
+let imgBx = document.querySelectorAll
