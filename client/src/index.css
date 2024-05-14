@@ -1043,6 +1043,12 @@ input, select, textarea{
     gap: 1rem;
 }
 
+.home-image{
+    position: relative;
+}
+
+
+
 /* ================================== LOADER ====================================*/
 .loader{
     position: relative;
@@ -1091,7 +1097,7 @@ input, select, textarea{
     } 
 
     .home-content {
-        max-width: 400px;
+        max-width: 380px;
         text-align: center; 
     }
 
@@ -1211,6 +1217,11 @@ input, select, textarea{
         color: #fff;
     }
 
+    .canvas{
+        margin-top: 100rem;
+        margin-left: 100rem;
+    }
+
     .posts-container{
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1272,8 +1283,213 @@ input, select, textarea{
 
 
 
+/* ================================== MEDIA QUERIES (SAMSUNG) ================================== */
+@media screen and (max-width: 414px){
+    h1{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.6rem;
+    }
+
+    h3{
+        font-size: 1.35rem;
+    }
+
+    .container{
+        width: var(--container-width-md);
+    }
+
+    .home{
+        padding: 200px 6%;
+    }
+    .icon{
+        padding: 10px 40%;
+    } 
+
+    .home-content {
+        max-width: 350px;
+        text-align: center; 
+        margin-left: -1rem;
+    }
+
+    .home-content h1{
+        font-size: 24px; 
+    }
+
+    .home-content h3{
+        font-size: 24px; 
+    }
+
+    .sp{
+        margin-top: -50rem;
+    }
+
+    .social-icons{
+        margin-top: 50px;
+    }
+
+    .swiper {
+        width: 250px;
+        height: 250px;
+        padding: 50px;
+        margin-top: 20rem; 
+        left: 0rem;
+        z-index: -1;
+      }
 
 
+      .text-left h2{
+        font-size: 30px;
+      }
+
+      .text-left a{
+        font-size: 24px;
+      }
+
+      .text-left {
+        position: absolute;
+        left: 0.5rem;
+        top: -7rem;
+        transform: translateY(-50%);
+        width: 100; /* Ajuste a largura conforme necessário */
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+    /* NAVBAR */
+
+    .nav-container{
+        position: relative;
+    }
+
+    .nav-menu{
+        position: absolute;
+        top: 4rem;
+        left: 18rem;
+        flex-direction: column;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .title{
+        font-size: 10px;
+    }
+    .nav-menu li {
+        box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.30);
+        animation: dropDown 500ms ease forwards;
+        opacity: 0;
+        transform: rotateX('90deg');
+        transform-origin: top;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-icon li {
+        width: 100%;
+        box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.30);
+        animation: dropDown 500ms ease forwards;
+        opacity: 0;
+        transform: rotateX('90deg');
+        transform-origin: top;
+    }
+
+    @keyframes dropDown {
+        to {
+            opacity: 1;
+            transform: rotateX('0');
+        }
+    }
+
+    .nav-menu li:nth-child(2) {
+        animation-delay: 300ms;
+    }
+
+    .nav-menu li:nth-child(3) {
+        animation-delay: 600ms;
+    }
+
+    .nav-menu li:nth-child(4) {
+        animation-delay: 900ms;
+    }
+
+    .nav-menu li a {
+        display: block;
+        background: #065ac7;
+        padding: 0.65rem 1rem;
+    }
+
+
+    .nav-toggle-btn {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    .canvas{
+        margin-top: 100rem;
+        margin-left: 100rem;
+    }
+
+    .posts-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-categories {
+        flex-direction: column;
+    }
+
+    .post-detail {
+        width: 100%;
+        background: transparent;
+        padding: 0;
+    }
+
+    .post-detail h1{
+        margin-top: 1rem;
+    }
+
+    .register, .login, .create-post{
+        width: 100%;
+    }
+
+    .form.profile-form {
+        margin-top: 2.5rem;
+        width: 100%;
+        bottom: 5rem;
+    }
+
+    .profile-details-wrapper{
+        margin-bottom: 10rem;
+    }
+    
+    .authors-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .dashboard-post{
+        flex-direction: column;
+    }
+
+    .dashboard-post-info{
+        gap: 1.5rem;
+    }
+
+    .dashboard-post-thumbnail{
+        width: 5rem;
+    }
+}
 
 
 
