@@ -1058,7 +1058,7 @@ input, select, textarea{
     width: 100vw;
     display: grid;
     place-items: center;
-    background: var(--color-bg);
+    background: transparent;
 }
 
 .loader-image {
