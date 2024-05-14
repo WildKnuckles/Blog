@@ -1066,7 +1066,7 @@ input, select, textarea{
 
 
 /* ================================== MEDIA QUERIES (responsive) ================================== */
-@media screen and (max-width: 800px){
+@media screen and (max-width: 600px){
     h1{
         font-size: 2rem;
     }
