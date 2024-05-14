@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import PostItem from './PostItem'
 import Loader from './Loader'
 import axios from 'axios'
-import data from '../data'
 
 
 const Posts = () => {
