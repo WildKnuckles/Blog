@@ -48,7 +48,7 @@ const UserProfile = () => {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://jesus.escritor00@gmail.com'><BiLogoGmail/></a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://wa.me/944147056'><BiLogoWhatsapp/></a></li>
           </ul></p>
-          <div><p>Designer Gráfico - Estudante do IPIL - Makarenco</p></div><br />
+          <div><p>Programador - Designer - Estudante do IPIL</p></div><br />
       </div>
 
       <div className="profile-details" style={{ flex: '1' }}>
@@ -64,7 +64,7 @@ const UserProfile = () => {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://jonataosacapia@gmail.com'><BiLogoGmail/></a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://wa.me/944072491'><BiLogoWhatsapp/></a></li>
           </ul></p>
-          <div><p>Programador - Estudante do IPIL - Makarenco</p></div><br /> 
+          <div><p>Programador - Estudante do IPIL - Web Designer</p></div><br /> 
         
       </div>
 
@@ -82,7 +82,7 @@ const UserProfile = () => {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://juliodomingos1710@gmail.com'><BiLogoGmail/></a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://wa.me/940899340'><BiLogoWhatsapp/></a></li>
           </ul></p>
-          <div><p>Programador - Estudante do IPIL - Makarenco</p></div><br />
+          <div><p>Programador - Estudante do IPIL</p></div><br />
       </div>
 
 
@@ -101,7 +101,7 @@ const UserProfile = () => {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://12leodasilva@gmail.com'><BiLogoGmail/></a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://wa.me/qr/HM2K7FCRTWD3N'><BiLogoWhatsapp/></a></li>
           </ul></p>
-          <div><p>Designer Gráfico - Estudante do IPIL - Makarenco</p></div><br />
+          <div><p>Programador - Designer - Estudante do IPIL</p></div><br />
           <form className='form profile-form'></form>
       </div>
     </div> 
