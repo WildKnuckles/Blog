@@ -52,7 +52,7 @@ const DicSlider = () => {
               <div className='quote-and-message-container'>
                 <div className='quote-and-icon'>
                   <div className='icone'>
-                    <a href={'/'} className='icone'>
+                    <a href={'http://localhost:3000'} className='icone'>
                     <RxArrowRight/></a>
                   </div>
                 </div>
