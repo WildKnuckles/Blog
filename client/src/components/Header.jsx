@@ -74,7 +74,7 @@ const Header = () => {
         <li><Link to="/about" onClick={closeNavHandler}><HiInformationCircle/></Link></li>
       </>
     )}
-    {window.innerWidth > 800 && (<Link to="/" className='nav-logo' onClick={closeNavHandler}>
+    {window.innerWidth > 800 && (<Link to="/login" className='nav-logo' onClick={closeNavHandler}>
     <img src={Logo} alt="Navbar Logo" />
     </Link>)}
   </ul>
