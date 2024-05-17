@@ -2,6 +2,7 @@
 
 :root{
     --color-primary: #6f6af8;
+    --tertiary: #01092d;
     --color-white: #fff;
     --color-red: rgb(255, 63, 63);
     --color-gray-100: hsl(220, 20%, 10%, 5%);

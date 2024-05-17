@@ -3,11 +3,9 @@ import { useMediaQuery } from 'react-responsive';
 import RotatingWords from '../components/RotatingWords';
 import Background from '../components/ParticlesContainer';
 import Rounded from '../images/rounded-logo.png';
-import EarthCanvas from '../components/Earth';
 import Posts from '../components/Posts'
 
 const Home = () => {
-  const isDesktop = useMediaQuery({ query: '(min-width: 769px)' });
   const isCelular = useMediaQuery({ query: '(max-width: 800px)' });
 
   return (
@@ -34,7 +32,6 @@ const Home = () => {
           </div>
         </div>
         <div>
-          {isDesktop && <EarthCanvas />}
         </div>
           {isCelular && <Posts />}
       </div>
