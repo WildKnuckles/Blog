@@ -70,7 +70,8 @@ const forgetPass = async (req, res, next) => {
             from: 'jonataosacapia@gmail.com',
             to: 'semanadalinguaportuguesa@gmail.com',
             subject: 'Recuperação de Senha.',
-            text: `Link para redefinir a senha: http://localhost:3000/reset-password/${user._id}/${token}`
+            text: `Link para redefinir a senha: 
+            https://cniilp-ao-client.vercel.app/reset-password/${user._id}/${token}`
         };
 
         transporter.sendMail(mailOptions, async function (error, info) {
