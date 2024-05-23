@@ -27,6 +27,7 @@ const ForgetPassword = () => {
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
         setError(err.response.data.message);
+        navigate('/login')
       } else {
         setError('Erro ao tentar recuperar a senha. Por favor, tente novamente mais tarde.');
       }
