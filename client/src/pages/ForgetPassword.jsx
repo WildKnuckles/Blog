@@ -24,10 +24,14 @@ const ForgetPassword = () => {
     setError('');
     try {
       await axios.post(`${process.env.REACT_APP_BASE_URL}/users/forget-password`, userData);
+      if(response.status == 200){
+        // log user out
+        navigate('/login')
+      }
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
         setError(err.response.data.message);
-        navigate('/login')
+         
       } else {
         setError('Erro ao tentar recuperar a senha. Por favor, tente novamente mais tarde.');
       }
