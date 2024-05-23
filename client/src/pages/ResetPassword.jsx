@@ -44,7 +44,7 @@ const UserProfile = () => {
         <div className="profile-details">
 
 
-        <h1>bv</h1> 
+        <h1>Redefinir Senha</h1> 
 
         {/* form to update user details */}
         <form className="form profile-form" onSubmit={updateUserDetails}>
