@@ -14,6 +14,7 @@ const dicSlider = [
     position: 'Customer',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    link: 'http://localhost/dicionario%20funcional/teste.php',  
   },
   {
     image: logo,
@@ -21,6 +22,7 @@ const dicSlider = [
     position: 'Customer',
     message:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+    link: 'http://localhost/dicionario%20funcional%20pc/index.php',
   }, 
 ];  
 
@@ -52,7 +54,7 @@ const DicSlider = () => {
               <div className='quote-and-message-container'>
                 <div className='quote-and-icon'>
                   <div className='icone'>
-                    <a href={'http://localhost:3000'} className='icone'>
+                    <a href={person.link} className='icone'>
                     <RxArrowRight/></a>
                   </div>
                 </div>
@@ -61,7 +63,7 @@ const DicSlider = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> 
         );
       })}
     </Swiper></>
