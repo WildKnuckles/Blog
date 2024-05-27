@@ -24,7 +24,7 @@ const UserProfile = () => {
             <img src={img3} alt="" />  
           </div> 
         </div> 
-        <h1>Dra. Paula Henirques</h1>
+        <h1>Dra. Paula Henriques</h1>
         <p><ul style={{ display: 'flex', gap: '25px', fontSize: '20px'}}>
             <li style={{ display: 'flex', alignItems: 'center' }}><BiLogoFacebook/></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><BiLogoInstagram/></li>

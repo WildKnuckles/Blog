@@ -48,6 +48,9 @@ const Header = () => {
       <li><Link to={`/profile/${currentUser?.id}`} onClick={closeNavHandler}>{currentUser?.name}</Link></li>
       <li><Link to="/create" onClick={closeNavHandler}>Criar Post</Link></li>
       <li><Link to="/authors" onClick={closeNavHandler}>Autores</Link></li>
+      <li><Link to="http://localhost/dicionario%20funcional%20pc/manipular/topo.html" onClick={closeNavHandler}>CPLP</Link></li>
+      <li><Link to="http://localhost/dicionario%20funcional/manipular/topo.html" onClick={closeNavHandler}>AO</Link></li>
+      <li><Link to="http://localhost/novo%20pag/manipular/topo.html" onClick={closeNavHandler}>Topónimos</Link></li>
       <li><Link to="/logout" onClick={closeNavHandler}>Sair</Link></li>
     </ul>}
 
