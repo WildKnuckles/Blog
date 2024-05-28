@@ -26,11 +26,14 @@ function App() {
   };
 
   return (
-    <div className="App">
+     <section className='create-post'>
+        <div className="container profile-container">
       <h1>Upload PDF</h1>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleUpload}>Upload</button>
     </div>
+     </section>
+    
   );
 }
 
