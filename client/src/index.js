@@ -9,7 +9,7 @@ import News from "./pages/News.jsx"
 import Brch from "./pages/Brch.jsx"
 import Gram from "./pages/Gram.jsx"
 import Dicio from "./pages/Dicio"
-import brxUp from "./pages/brxUp"
+ 
 import PostDetail from "./pages/PostDetail"
 import UserProfile from './pages/UserProfile';
 import ForgetPassword from './pages/ForgetPassword.jsx';
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         {path: "grammar", element: <Gram/>},
         {path: "about", element: <About/>},
         {path: "dicionary", element: <Dicio/>},
-        {path: "update", element: <brxUp/>},
+         
         {path: "login", element: <Login/>},
         {path: "forget-password", element: <ForgetPassword/>},
         {path: "reset-password/:id/:token", element: <ResetPassword/>},
