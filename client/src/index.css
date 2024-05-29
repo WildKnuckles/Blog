@@ -1007,6 +1007,19 @@ input, select, textarea{
     width: 40%;
 }
 
+.password-input-container {
+    position: relative;
+    color: #01092d;
+  }
+  
+  .password-toggle {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    right: 10px; /* Ajuste o valor conforme necessário */
+    cursor: pointer;
+  }
+
 .success-icon {
     color: green;
     opacity: 0;
