@@ -63,7 +63,9 @@ const UserProfile = () => {
       <div className="container profile-container">
         <div className="profile-details">
           <h1>Redefinir Senha</h1>
-
+          {showSuccess && (
+              <FaCheck className="success-icon" />
+            )}
           {/* form to update user details */}
           <form className="form profile-form" onSubmit={updateUserDetails}>
             {error && <p className="form-error-message">{error}</p>}
@@ -74,9 +76,7 @@ const UserProfile = () => {
               onChange={(e) => handlePasswordChange(e.target.value)}
               autoFocus
             />
-            {showSuccess && (
-              <FaCheck className="success-icon" />
-            )}
+            
             <button type="submit" className="btn primary">
               Atualizar
             </button>
