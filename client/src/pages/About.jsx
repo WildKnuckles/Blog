@@ -82,7 +82,7 @@ const UserProfile = () => {
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://juliodomingos1710@gmail.com'><BiLogoGmail/></a></li>
             <li style={{ display: 'flex', alignItems: 'center' }}><a href='https://wa.me/940899340'><BiLogoWhatsapp/></a></li>
           </ul></p>
-          <div><p>Programador - Estudante do IPIL</p></div><br />
+          <div><p>Web Designer - Programador - Transcritor - Help Desk</p></div><br />
       </div>
 
 
