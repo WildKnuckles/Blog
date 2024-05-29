@@ -1001,6 +1001,12 @@ input, select, textarea{
     width: var(--form-width);
 }
 
+.form.feed-form{
+    margin-top: 3rem;
+    margin-inline: auto;
+    width: 40%;
+}
+
 
 
 
