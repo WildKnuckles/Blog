@@ -1,64 +1,62 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaEdit } from "react-icons/fa"
-import { FaCheck } from "react-icons/fa"
-import { UserContext } from '../context/userContext'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const UserProfile = () => {
-  const [avatar, setAvatar] = useState('')
-  const [newPassword, setNewPassword] = useState('')
-  const [confirmNewPassword, setConfirmNewPassword] = useState('')
+  const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate();
-  const [error, setError] = useState('')
-  const { id, token } = useParams()
+  const [error, setError] = useState('');
+  const { id, token } = useParams();
 
   const isPasswordValid = (password) => {
     // Verifica se a senha possui pelo menos 8 caracteres, um número, uma letra maiúscula e uma minúscula
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
     return passwordRegex.test(password);
-  }
+  };
 
   const handlePasswordChange = (password) => {
     if (!isPasswordValid(password)) {
-      setError('A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.');
+      setError(
+        'A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.'
+      );
     } else {
       setError('');
     }
     setNewPassword(password);
-  }
+  };
 
   const updateUserDetails = async (e) => {
     e.preventDefault();
 
     if (!isPasswordValid(newPassword)) {
-      setError('A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.');
+      setError(
+        'A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.'
+      );
       return;
     }
 
     try {
       const userData = new FormData();
-      userData.set('newPassword', newPassword)
+      userData.set('newPassword', newPassword);
 
-      const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/users/reset-password/${id}/${token}`, userData)
+      const response = await axios.patch(
+        `${process.env.REACT_APP_BASE_URL}/users/reset-password/${id}/${token}`,
+        userData
+      );
       if (response.status === 200) {
         // log user out
-        navigate('/login')
+        navigate('/login');
       }
     } catch (error) {
       setError(error.response.data.message);
     }
-  }
+  };
 
   return (
     <section className="profile">
       <div className="container profile-container">
-
         <div className="profile-details">
-
-
           <h1>Redefinir Senha</h1>
 
           {/* form to update user details */}
@@ -66,20 +64,19 @@ const UserProfile = () => {
             {error && <p className="form-error-message">{error}</p>}
             <input
               type="password"
-              placeholder='Senha Nova'
+              placeholder="Senha Nova"
               value={newPassword}
               onChange={(e) => handlePasswordChange(e.target.value)}
               autoFocus
             />
-            {error && <p className="form-error-message">{error}</p>}
-            <button type='submit' className="btn primary">Atualizar</button>
+            <button type="submit" className="btn primary">
+              Atualizar
+            </button>
           </form>
-
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default UserProfile
+export default UserProfile;
