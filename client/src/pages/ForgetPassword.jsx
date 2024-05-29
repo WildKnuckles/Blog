@@ -59,7 +59,7 @@ const ForgetPassword = () => {
       <div className="container">
         <h2 className="center">Recuperação de Senha</h2>
         <form className="form login-form" onSubmit={forgetPass}>
-        {showConfirmation && <FaCheck className="success-icon" />} {/* Ícone de confirmação */}
+        {showConfirmation && <p className="success-icon" >Email Enviado</p>} {/* Ícone de confirmação */}
           {error && <p className="form-error-message">{error}</p>}
           <input
             type="text"
