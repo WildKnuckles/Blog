@@ -22,13 +22,12 @@ const ForgetPassword = () => {
   };
 
   useEffect(() => {
-    let timer;
     if (countdown > 0) {
-      timer = setInterval(() => {
+      const timer = setInterval(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
+      return () => clearInterval(timer); // Limpa o intervalo quando o componente desmonta ou o countdown muda
     }
-    return () => clearInterval(timer);
   }, [countdown]);
 
   const forgetPass = async (e) => {
