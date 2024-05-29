@@ -28,7 +28,7 @@ const createPost = async (req, res, next) => {
         let newFilename = splittedFilename[0] + uuid() + "." + splittedFilename[splittedFilename.length - 1];
 
         // Define the path to the Git repository's directory
-        let gitRepoPath = path.join(__dirname, '..', '..', 'server/uploads'); // substitua 'nome-do-repositorio' pelo nome da sua pasta do repositório
+        let gitRepoPath = path.join(__dirname, '..', '..', 'server'); // substitua 'nome-do-repositorio' pelo nome da sua pasta do repositório
         let uploadPath = path.join(gitRepoPath, 'uploads', newFilename);
 
         thumbnail.mv(uploadPath, async (err) => {
