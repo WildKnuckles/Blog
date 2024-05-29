@@ -42,6 +42,35 @@ body{
     color: var(--color-gray-700);
 }
 
+/* Estilos para scrollbar vertical */
+::-webkit-scrollbar {
+    width: 12px; /* largura da scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* cor do pega-pedra */
+    border-radius: 6px; /* borda arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* cor do pega-pedra ao passar o mouse */
+}
+
+/* Estilos para scrollbar horizontal */
+::-webkit-scrollbar-horizontal {
+    height: 12px; /* altura da scrollbar */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #888; /* cor do pega-pedra horizontal */
+    border-radius: 6px; /* borda arredondada */
+}
+
+::-webkit-scrollbar-thumb:hover:horizontal {
+    background-color: #555; /* cor do pega-pedra horizontal ao passar o mouse */
+}
+
+
 a{
     text-decoration: none;
     color: var(--color-gray-700);
