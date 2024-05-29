@@ -1011,6 +1011,7 @@ input, select, textarea{
     opacity: 0;
     animation: fade-in 0.5s ease-in-out forwards;
     margin-bottom: -3rem;
+    font-size: 28px;
   }
   
   @keyframes fade-in {
