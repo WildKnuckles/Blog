@@ -37,6 +37,7 @@ const ForgetPassword = () => {
     try {
       await axios.post(`${process.env.REACT_APP_BASE_URL}/users/forget-password`, userData);
       setCountdown(60); // Inicia a contagem regressiva de 60 segundos
+      setUserData({ email: '' }); // Limpa o campo de email
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
         setError(err.response.data.message);
@@ -54,8 +55,21 @@ const ForgetPassword = () => {
         <h2 className="center">Recuperação de Senha</h2>
         <form className="form login-form" onSubmit={forgetPass}>
           {error && <p className="form-error-message">{error}</p>}
-          <input type="text" name="email" placeholder="Email" value={userData.email} onChange={changeInputHandler} autoFocus />
-          <button type="submit" className="btn primary" disabled={loading || countdown > 0}>
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            value={userData.email}
+            onChange={changeInputHandler}
+            autoFocus
+            disabled={countdown > 0} // Desabilita o campo de email durante a contagem regressiva
+          />
+          <button
+            type="submit"
+            className={`btn primary ${loading || countdown > 0 ? 'disabled' : ''}`}
+            disabled={loading || countdown > 0}
+            style={{ cursor: (loading || countdown > 0) ? 'not-allowed' : 'pointer' }}
+          >
             {loading ? 'Enviando...' : countdown > 0 ? `Aguarde ${countdown}s` : 'Enviar'}
           </button>
           <small>
