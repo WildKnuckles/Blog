@@ -63,6 +63,7 @@ const UserProfile = () => {
       <div className="container profile-container">
         <div className="profile-details">
           <h1>Redefinir Senha</h1>
+          <br />
           {showSuccess && (
               <FaCheck className="success-icon" />
             )}

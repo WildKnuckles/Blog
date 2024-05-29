@@ -1010,6 +1010,7 @@ input, select, textarea{
 .success-icon {
     opacity: 0;
     animation: fade-in 0.5s ease-in-out forwards;
+    margin-bottom: -3rem;
   }
   
   @keyframes fade-in {
