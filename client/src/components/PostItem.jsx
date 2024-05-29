@@ -6,9 +6,12 @@ const PostItem = ({postID, category, title, desc, authorID, thumbnail, createdAt
     const shortDesc = desc.length > 145 ? desc.substr(0, 145) + '...' : desc;
     const postTitle = title.length > 30 ? title.substr(0, 30) + '...' : title;
   return (
-    <article className="post">
+    <Link to={`/posts/${postID}`}>
+        <article className="post">
         <div className="post-thumbnail">
+        <Link to={`/posts/${postID}`}>
             <img src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnail}`} alt={title} />
+        </Link>
         </div>
         <div className="post-content">
             <Link to={`/posts/${postID}`}>
@@ -20,7 +23,7 @@ const PostItem = ({postID, category, title, desc, authorID, thumbnail, createdAt
             <Link to={`/posts/categories/${category}`} className='btn category'>{category}</Link>
             </div>
         </div>
-    </article>
+    </article></Link>
   )
 }
 
