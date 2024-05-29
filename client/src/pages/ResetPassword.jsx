@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import {FaEdit} from "react-icons/fa"
-import {FaCheck} from "react-icons/fa"
-import {UserContext} from '../context/userContext'
-import {useNavigate} from 'react-router-dom'
+import { FaEdit } from "react-icons/fa"
+import { FaCheck } from "react-icons/fa"
+import { UserContext } from '../context/userContext'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -13,29 +13,35 @@ const UserProfile = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState('')
   const navigate = useNavigate();
   const [error, setError] = useState('')
-  const {id, token} = useParams()
+  const { id, token } = useParams()
 
+  const isPasswordValid = (password) => {
+    // Verifica se a senha possui pelo menos 8 caracteres, um número, uma letra maiúscula e uma minúscula
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    return passwordRegex.test(password);
+  }
 
+  const updateUserDetails = async (e) => {
+    e.preventDefault();
 
-    const updateUserDetails = async (e) => {
-      e.preventDefault();
+    if (!isPasswordValid(newPassword)) {
+      setError('A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.');
+      return;
+    }
 
-      try {
-        const userData = new FormData();
+    try {
+      const userData = new FormData();
       userData.set('newPassword', newPassword)
 
       const response = await axios.patch(`${process.env.REACT_APP_BASE_URL}/users/reset-password/${id}/${token}`, userData)
-      if(response.status == 200){
+      if (response.status === 200) {
         // log user out
         navigate('/login')
       }
-      } catch (error) {
-        setError(error.response.data.message);
-      }
+    } catch (error) {
+      setError(error.response.data.message);
     }
-
-
-
+  }
 
   return (
     <section className="profile">
@@ -44,17 +50,17 @@ const UserProfile = () => {
         <div className="profile-details">
 
 
-        <h1>Redefinir Senha</h1> 
+          <h1>Redefinir Senha</h1>
 
-        {/* form to update user details */}
-        <form className="form profile-form" onSubmit={updateUserDetails}>
-          {error && <p className="form-error-message">{error}</p>}
-          <input type="password" placeholder='Senha Nova' value={newPassword} onChange={e => setNewPassword(e.target.value)} autoFocus/>
-          <button type='submit' className="btn primary">Atualizar</button>
-        </form>
+          {/* form to update user details */}
+          <form className="form profile-form" onSubmit={updateUserDetails}>
+            {error && <p className="form-error-message">{error}</p>}
+            <input type="password" placeholder='Senha Nova' value={newPassword} onChange={e => setNewPassword(e.target.value)} autoFocus />
+            <button type='submit' className="btn primary">Atualizar</button>
+          </form>
 
 
-      </div> 
+        </div>
       </div>
     </section>
   )
