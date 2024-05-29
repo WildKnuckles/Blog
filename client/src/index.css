@@ -53,7 +53,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* cor do pega-pedra ao passar o mouse */
+    background-color: #12f7ff; /* cor do pega-pedra ao passar o mouse */
 }
 
 /* Estilos para scrollbar horizontal */
@@ -67,7 +67,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb:hover:horizontal {
-    background-color: #555; /* cor do pega-pedra horizontal ao passar o mouse */
+    background-color: #12f7ff; /* cor do pega-pedra horizontal ao passar o mouse */
 }
 
 
