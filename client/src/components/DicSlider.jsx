@@ -21,7 +21,7 @@ const dicSlider = [
     name: 'Dicionário Digital Plurilíngue da Educação e Formação da CPLP',
     position: 'Customer',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Através da internet, pode fazer pesquisas de diferentes termos em diferentes dicionários da sua escolha na (“Plataforma CNIILP”)!',
     link: 'http://localhost/dicionario%20funcional%20pc/index.php',
   }, 
 ];  
