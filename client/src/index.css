@@ -11,8 +11,9 @@
     --color-gray-500: hsl(220, 20%, 10%, 50%);
     --color-gray-700: #fff;
     --color-gray-900: #164480;
+    --hover-color: #12f7ff;
 
-    --color-bg: linear-gradient(to bottom, #1E2F97, #065ac7);
+    --color-bg: #1E2F97;
 
     --transition: all 300ms ease;
 
@@ -134,7 +135,7 @@ section{
 }
 
 .btn.primary{
-    background: var(--color-primary);
+    background: #3347cc;
     color: var(--color-white);
 }
 
@@ -164,7 +165,7 @@ section{
 }
 
 .btn:hover{
-    background: var(--color-white);
+    background: var(--hover-color);
     color: var(--color-bg);
 }
 
@@ -679,9 +680,10 @@ nav{
 /* ================================== FOOTER ================================== */
 
 footer {
-    background: #065ac7;
+    background: linear-gradient(to top, #065ac7, #1E2F97);
     margin-top: 6rem;
     padding-top: 6rem;
+    border-top: 1px solid #065ac7;
 }
 
 .footer-categories {
@@ -701,7 +703,7 @@ footer {
 }
 
 .footer-categories a:hover {
-    background: var(--color-white);
+    background: var(--hover-color);
     color: var(--color-gray-900);
 }
 
@@ -836,6 +838,22 @@ input, select, textarea{
     padding: 0.6rem 1rem;
     border-radius: var(--radius-1);
     resize: none;
+    background: transparent;
+    border-bottom: 4px solid #12f7ff;
+    color: #fff;
+    border-left: 1px solid #12f7ff;
+}
+
+input::placeholder{
+    color: #fff;
+}
+
+select::placeholder{
+    color: #fff;
+}
+
+textarea::placeholder{
+    color: #fff;
 }
 
 .form-error-message {
@@ -1038,7 +1056,7 @@ input, select, textarea{
 
 .password-input-container {
     position: relative;
-    color: #01092d;
+    color: #fff;
   }
   
   .password-toggle {
