@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../context/userContext.js';
+import { FaCheck } from 'react-icons/fa';
 
 const ForgetPassword = () => {
   const [userData, setUserData] = useState({
@@ -11,6 +12,7 @@ const ForgetPassword = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [countdown, setCountdown] = useState(0); // Estado para a contagem regressiva
+  const [showConfirmation, setShowConfirmation] = useState(false); // Estado para mostrar o ícone de confirmação
   const navigate = useNavigate();
 
   const { setCurrentUser } = useContext(UserContext);
@@ -23,10 +25,13 @@ const ForgetPassword = () => {
 
   useEffect(() => {
     if (countdown > 0) {
+      setShowConfirmation(true); // Mostra o ícone de confirmação quando o temporizador começa
       const timer = setInterval(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
       }, 1000);
       return () => clearInterval(timer); // Limpa o intervalo quando o componente desmonta ou o countdown muda
+    } else {
+      setShowConfirmation(false); // Esconde o ícone de confirmação quando o temporizador termina
     }
   }, [countdown]);
 
@@ -54,6 +59,7 @@ const ForgetPassword = () => {
       <div className="container">
         <h2 className="center">Recuperação de Senha</h2>
         <form className="form login-form" onSubmit={forgetPass}>
+        {showConfirmation && <FaCheck className="success-icon" />} {/* Ícone de confirmação */}
           {error && <p className="form-error-message">{error}</p>}
           <input
             type="text"
@@ -64,11 +70,12 @@ const ForgetPassword = () => {
             autoFocus
             disabled={countdown > 0} // Desabilita o campo de email durante a contagem regressiva
           />
+          
           <button
             type="submit"
             className={`btn primary ${loading || countdown > 0 ? 'disabled' : ''}`}
             disabled={loading || countdown > 0}
-            style={{ cursor: (loading || countdown > 0) ? 'not-allowed' : 'pointer' }}
+            style={{ cursor: loading || countdown > 0 ? 'not-allowed' : 'pointer' }}
           >
             {loading ? 'Enviando...' : countdown > 0 ? `Aguarde ${countdown}s` : 'Enviar'}
           </button>
