@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { FaCheck } from "react-icons/fa";
 
 const UserProfile = () => {
   const [newPassword, setNewPassword] = useState('');
   const navigate = useNavigate();
   const [error, setError] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
   const { id, token } = useParams();
 
   const isPasswordValid = (password) => {
@@ -20,8 +22,10 @@ const UserProfile = () => {
       setError(
         'A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.'
       );
+      setShowSuccess(false);
     } else {
       setError('');
+      setShowSuccess(true);
     }
     setNewPassword(password);
   };
@@ -45,6 +49,7 @@ const UserProfile = () => {
         userData
       );
       if (response.status === 200) {
+        setShowSuccess(true);
         // log user out
         navigate('/login');
       }
@@ -69,6 +74,9 @@ const UserProfile = () => {
               onChange={(e) => handlePasswordChange(e.target.value)}
               autoFocus
             />
+            {showSuccess && (
+              <FaCheck className="success-icon" />
+            )}
             <button type="submit" className="btn primary">
               Atualizar
             </button>
