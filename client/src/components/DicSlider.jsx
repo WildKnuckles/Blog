@@ -13,7 +13,7 @@ const dicSlider = [
     name: 'Dicionário Digital da República de Angola',
     position: 'Customer',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Além da demonstração escrita de cada termo, contém a demonstração fonética (leitura por voz) do termo pesquisado, ajudando alunos a desenvolver a escrita e a expressão correcta de termos!',
     link: 'http://localhost/dicionario%20funcional/teste.php',  
   },
   {
