@@ -21,6 +21,15 @@ const UserProfile = () => {
     return passwordRegex.test(password);
   }
 
+  const handlePasswordChange = (password) => {
+    if (!isPasswordValid(password)) {
+      setError('A senha deve conter pelo menos 8 caracteres, incluindo pelo menos um número, uma letra maiúscula e uma minúscula.');
+    } else {
+      setError('');
+    }
+    setNewPassword(password);
+  }
+
   const updateUserDetails = async (e) => {
     e.preventDefault();
 
@@ -55,7 +64,14 @@ const UserProfile = () => {
           {/* form to update user details */}
           <form className="form profile-form" onSubmit={updateUserDetails}>
             {error && <p className="form-error-message">{error}</p>}
-            <input type="password" placeholder='Senha Nova' value={newPassword} onChange={e => setNewPassword(e.target.value)} autoFocus />
+            <input
+              type="password"
+              placeholder='Senha Nova'
+              value={newPassword}
+              onChange={(e) => handlePasswordChange(e.target.value)}
+              autoFocus
+            />
+            {error && <p className="form-error-message">{error}</p>}
             <button type='submit' className="btn primary">Atualizar</button>
           </form>
 
