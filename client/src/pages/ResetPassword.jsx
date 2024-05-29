@@ -63,12 +63,11 @@ const UserProfile = () => {
       <div className="container profile-container">
         <div className="profile-details">
           <h1>Redefinir Senha</h1>
-          <br />
-          {showSuccess && (
-              <FaCheck className="success-icon" />
-            )}
           {/* form to update user details */}
           <form className="form profile-form" onSubmit={updateUserDetails}>
+          <h2>{showSuccess && (
+              <FaCheck className="success-icon" />
+            )}</h2>
             {error && <p className="form-error-message">{error}</p>}
             <input
               type="password"
